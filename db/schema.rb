@@ -29,9 +29,10 @@ ActiveRecord::Schema.define(version: 20170427150120) do
 
   create_table "notes", force: :cascade do |t|
     t.string   "body"
-    t.string   "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "post_id",    null: false
+    t.index ["post_id"], name: "index_notes_on_post_id", using: :btree
   end
 
   create_table "posts", force: :cascade do |t|
@@ -42,4 +43,5 @@ ActiveRecord::Schema.define(version: 20170427150120) do
 
   add_foreign_key "listings", "boards"
   add_foreign_key "listings", "posts"
+  add_foreign_key "notes", "posts"
 end
