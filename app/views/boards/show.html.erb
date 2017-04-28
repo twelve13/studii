@@ -1,4 +1,7 @@
-<h2><%= @board.title %></h2>
+<h2><%= @board.title %>
+<%= link_to "(edit)", edit_board_path(@board) %>
+<%= link_to "(delete)", board_path(@board), :method => :delete %>	
+</h2>
 
 <div class="posts-wrapper">
 	<% @board.posts.each do |post| %>
