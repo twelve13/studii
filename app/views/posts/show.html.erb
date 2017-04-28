@@ -1,0 +1,17 @@
+<p><< <%= link_to @board.title, board_path(@board) %></p>
+<div class="inner-post-wrapper">
+<img class="inner-post-image" src="<%= @post.image %>" alt="<%= @post.title %>">
+
+<div class="url-and-notes">
+<%= link_to @post.title, @post.url %>
+
+<%= link_to "(edit)", edit_board_post_path(@board, @post) %>
+<%= link_to "(delete)", board_post_path(@board, @post), :method => :delete %>	
+
+<% @post.notes.each do |note| %>
+		
+		<div class="note-body">	<%= note.body %> </div>
+		
+<% end %>
+</div>
+</div>

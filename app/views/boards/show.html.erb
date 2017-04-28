@@ -3,6 +3,8 @@
 <%= link_to "(delete)", board_path(@board), :method => :delete %>	
 </h2>
 
+<%= link_to "(Add post)", new_board_post_path(@board) %>
+
 <div class="posts-wrapper">
 	<% @board.posts.each do |post| %>
 		<div class="post">
