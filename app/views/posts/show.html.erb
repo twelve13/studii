@@ -1,33 +1,37 @@
 <p><< <%= link_to @board.title, board_path(@board) %></p>
 <div class="inner-post-wrapper">
-<img class="inner-post-image" src="<%= @post.image %>" alt="<%= @post.title %>">
+	<img class="inner-post-image" src="<%= @post.image %>" alt="<%= @post.title %>">
 
-<div class="url-and-notes">
-<h1><%= link_to @post.title, @post.url %></h1>
+	<div class="url-and-notes">
+		<h1><%= link_to @post.title, @post.url %></h1>
 
-<%= link_to "(edit)", edit_board_post_path(@board, @post) %>
-<%= link_to "(delete)", board_post_path(@board, @post), :method => :delete %>	
+		<%= link_to "(edit)", edit_board_post_path(@board, @post) %>
+		<%= link_to "(delete)", board_post_path(@board, @post), :method => :delete %>	
 
-<%= link_to "(add note)", new_board_post_note_path(@board, @post) %>
+		<%= link_to "(add note)", new_board_post_note_path(@board, @post) %>
 
-<% @post.notes.each do |note| %>
+		<% @post.notes.each do |note| %>
 		
-		<div class="note-body">	
-		<%= note.body %> 
-		<%= note.created_at %>
+			<div class="note-body">	
+			<h3><%= note.body %></h3> 
+			<%= note.created_at %>
 
 		<%#= link_to "(edit note)", edit_board_post_note_path(@board, @post, @note) %>
-		</div>
 		
-<% end %>
+		
 
-<h1>Edit Note</h1>
 
-<%= form_for [@board, @post, @note] do |f| %>
-	<%= f.label :body %>
-	<%= f.text_field :body %>
+			<p>Edit Note</p>
 
-	<%= f.submit %>
-<% end %>
-</div>
-</div>
+			<%= form_for [@board, @post, note] do |f| %>
+			<%= f.label :body %>
+			<%= f.text_field :body %>
+
+			<%= f.submit %>			
+			<% end %>
+
+			<%= link_to "(delete)", board_post_note_path(@board, @post, note), :method => :delete %>
+			</div>
+		<% end %>
+	</div>
+</div> 

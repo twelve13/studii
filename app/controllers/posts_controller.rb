@@ -25,7 +25,7 @@ def update
 	@board = Board.find(params[:board_id])
 	@post = @board.posts.find(params[:id])
 	@post.update(post_params)
-	redirect_to board_path(@board)
+	redirect_to board_post_path(@board, @post)
 end
 
 def destroy

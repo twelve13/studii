@@ -29,9 +29,10 @@ end
 
 def destroy
 	@board = Board.find(params[:board_id])
-	@post = @board.posts.find(params[:id])
-	@post.destroy
-	redirect_to board_path(@board)
+	@post = @board.posts.find(params[:post_id])
+	@note = @post.notes.find(params[:id])
+	@note.destroy
+	redirect_to board_post_path(@board, @post)
 end
 
 private
