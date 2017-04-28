@@ -9,20 +9,22 @@ end
 def create
 	@board = Board.find(params[:board_id])
 	@post = @board.posts.find(params[:post_id])
-	@note = @post.create(note_params)
+	@note = @post.notes.create(note_params)
 	redirect_to board_post_path(@board, @post)
 end
 
 def edit
 	@board = Board.find(params[:board_id])
-	@post = Post.find(params[:id])
+	@post = @board.posts.find(params[:post_id])
+	@note = @post.notes.find(params[:id])
 end
 
 def update
 	@board = Board.find(params[:board_id])
-	@post = @board.posts.find(params[:id])
-	@post.update(post_params)
-	redirect_to board_path(@board)
+	@post = @board.posts.find(params[:post_id])
+	@note = @post.notes.find(params[:id])
+	@note.update(note_params)
+	redirect_to board_post_path(@board, @post)
 end
 
 def destroy

@@ -3,15 +3,31 @@
 <img class="inner-post-image" src="<%= @post.image %>" alt="<%= @post.title %>">
 
 <div class="url-and-notes">
-<%= link_to @post.title, @post.url %>
+<h1><%= link_to @post.title, @post.url %></h1>
 
 <%= link_to "(edit)", edit_board_post_path(@board, @post) %>
 <%= link_to "(delete)", board_post_path(@board, @post), :method => :delete %>	
 
+<%= link_to "(add note)", new_board_post_note_path(@board, @post) %>
+
 <% @post.notes.each do |note| %>
 		
-		<div class="note-body">	<%= note.body %> </div>
+		<div class="note-body">	
+		<%= note.body %> 
+		<%= note.created_at %>
+
+		<%#= link_to "(edit note)", edit_board_post_note_path(@board, @post, @note) %>
+		</div>
 		
+<% end %>
+
+<h1>Edit Note</h1>
+
+<%= form_for [@board, @post, @note] do |f| %>
+	<%= f.label :body %>
+	<%= f.text_field :body %>
+
+	<%= f.submit %>
 <% end %>
 </div>
 </div>
