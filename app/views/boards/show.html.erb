@@ -1,9 +1,12 @@
 <h2><%= @board.title %></h2>
 
-<ul>
+<div class="posts-wrapper">
 	<% @board.posts.each do |post| %>
-		<li>
+		<div class="post">
+			<img class="post-image" src="<%= post.image %>" alt="<%= post.title %>">
 			<%= link_to post.title, board_post_path(@board, post) %>
-		</li>
+		</div>
 	<% end %>
-</ul>
+</div>
+
+

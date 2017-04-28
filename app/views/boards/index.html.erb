@@ -1,8 +1,9 @@
-<h1>Boards</h1>
-	<ul>
-		<% @boards.each do |board| %>
-			<li>
-				<%= link_to board.title, board %>
-			</li>
-		<% end %>
-	</ul>
+<div class="boards-wrapper">
+	<% @boards.each do |board| %>
+		<div class="board">
+			<img class="board-image" src="<%= board.image %>" alt="<%= board.title %>">
+			<%= link_to board.title, board %>
+		</div>
+	<% end %>
+</div>
+	
