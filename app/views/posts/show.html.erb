@@ -15,8 +15,7 @@
 
 		<%= link_to "(edit post)", edit_board_post_path(@board, @post) %>
 		<%= link_to "(delete post)", board_post_path(@board, @post), :method => :delete %>	
-
-		<%= link_to "(add note)", new_board_post_note_path(@board, @post) %>
+	<div>	<%= link_to "(add note)", new_board_post_note_path(@board, @post) %> </div>
 </div>
 		<% @post.notes.each do |note| %>
 		
@@ -24,21 +23,14 @@
 			<div class="note-body"><%= note.body %></div> 
 			<%= note.created_at %>
 
-		<%#= link_to "(edit note)", edit_board_post_note_path(@board, @post, @note) %>
+		<%= link_to "(edit note)", edit_board_post_note_path(@board, @post, note) %>
 		
 		
 
 
-			<p>Edit Note</p>
+			
 
-			<%= form_for [@board, @post, note] do |f| %>
-			<%= f.label :body %>
-			<%= f.text_field :body %>
-
-			<%= f.submit %>			
-			<% end %>
-
-			<%= link_to "(delete)", board_post_note_path(@board, @post, note), :method => :delete %>
+			<%= link_to "(delete note)", board_post_note_path(@board, @post, note), :method => :delete %>
 			</div>
 		<% end %>
 	</div>

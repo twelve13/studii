@@ -1,4 +1,5 @@
 <div class="back-to-boards"><h1><%= link_to "<< Boards", boards_path %></h1></div>
+<div class="back-to"><< <%= link_to @board.title, board_path(@board) %></div>
 
 <div class="new-board-wrapper">
 	<div class="new-board-main">
