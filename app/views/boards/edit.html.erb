@@ -1,6 +1,11 @@
-<h1>Edit Board</h1>
+<div class="back-to-boards"><h1><%= link_to "<< Boards", boards_path %></h1></div>
 
-<%= form_for @board do |f| %>
+<div class="new-board-wrapper">
+	<div class="new-board-main">
+	<div>
+	<div class="new-board">Edit Board</div>
+
+	<%= form_for @board do |f| %>
 	<%= f.label :title %>
 	<%= f.text_field :title %>
 
@@ -8,4 +13,7 @@
 	<%= f.text_field :image %>
 
 	<%= f.submit %>
-<% end %>
+	<% end %>
+	</div>
+	</div>
+</div>

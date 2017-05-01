@@ -1,11 +1,19 @@
-<h1>New Board</h1>
+<div class="back-to-boards"><h1><%= link_to "<< Boards", boards_path %></h1></div>
 
-<%= form_for @board do |f| %>
-	<%= f.label :title %>
-	<%= f.text_field :title %>
+<div class="new-board-wrapper">
+	<div class="new-board-main">
+	<div>
+	<div class="new-board">New Board</div>
 
-	<%= f.label :image %>
-	<%= f.text_field :image %>
+		<%= form_for @board do |f| %>
+		<%= f.label :title %>
+		<%= f.text_area :title %>
 
-	<%= f.submit %>
-<% end %>
+		<%= f.label :image %>
+		<%= f.text_area :image %>
+
+		<%= f.submit %>
+	<% end %>
+	</div>
+	</div>
+</div>

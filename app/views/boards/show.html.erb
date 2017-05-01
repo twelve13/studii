@@ -1,13 +1,15 @@
   <div class="show-wrapper">
 
-  	<header><h1><%= link_to "* Boards *", boards_path %></h1></header>
+  	<div class="back-to-boards"><h1><%= link_to "<< Boards", boards_path %></h1></div>
+<div class="page-header">
+<div class="board-title"><%= @board.title %></h1></div>
+<h3>
+<%= link_to "(edit board)", edit_board_path(@board) %>
+<%= link_to "(delete board)", board_path(@board), :method => :delete %>	
+<%= link_to "(add post)", new_board_post_path(@board) %>
+</h3>
+</div>
 
-<h2><%= @board.title %>
-<%= link_to "(edit)", edit_board_path(@board) %>
-<%= link_to "(delete)", board_path(@board), :method => :delete %>	
-</h2>
-
-<%= link_to "(Add post)", new_board_post_path(@board) %>
 
 <div class="posts-wrapper">
 	<% @board.posts.each do |post| %>

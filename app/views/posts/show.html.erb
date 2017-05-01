@@ -1,6 +1,9 @@
-  	<header><h1><%= link_to "* Boards *", boards_path %></h1></header>
+  	<div class="notes-header">
+  	<h1><%= link_to "* Boards *", boards_path %></h1>
+<p><< <%= link_to @board.title, board_path(@board) %> Board</p>
+  	</div>
 
-<p><< <%= link_to @board.title, board_path(@board) %></p>
+
 <div class="inner-post-wrapper">
 	<div class="inner-post-image-wrapper">
 	<img class="inner-post-image" src="<%= @post.image %>" alt="<%= @post.title %>">
