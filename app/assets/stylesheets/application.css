@@ -130,6 +130,7 @@ a:visited {
 	justify-content: center;
 	align-items: center;
 	width: 100%;
+	color: white;
 }
 
 .post-image {
@@ -177,4 +178,19 @@ a:visited {
 	box-sizing: border-box;
 	padding: 2%;
 	overflow-wrap: break-word;
+}
+
+.back-to {
+	color: white;
+	margin-left: 2%;
+}
+
+.post-title {
+	font-size: 36px;
+	color: white;
+}
+
+.visit {
+	font-size: 36px;
+	text-align: center;
 }

@@ -24,7 +24,7 @@ end
 def update
 	@board = Board.find(params[:id])
 	@board.update(board_params)
-	redirect_to root_path
+	redirect_to board_path(@board)
 end
 
 def destroy

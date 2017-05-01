@@ -1,19 +1,20 @@
   	<div class="notes-header">
-  	<h1><%= link_to "* Boards *", boards_path %></h1>
-<p><< <%= link_to @board.title, board_path(@board) %> Board</p>
+<div class="back-to-boards"><h1><%= link_to "<< Boards", boards_path %></h1></div>
+<p class="back-to"><< <%= link_to @board.title, board_path(@board) %></p>
   	</div>
 
 
 <div class="inner-post-wrapper">
 	<div class="inner-post-image-wrapper">
-	<img class="inner-post-image" src="<%= @post.image %>" alt="<%= @post.title %>">
+	<img class="inner-post-image" src="<%= @post.image %>" alt="* * <%= @post.title %> * *">
+		<div class="visit"><%= link_to "Visit Page >>", @post.url %></div>
 </div>
 	<div class="url-and-notes">
 	<div class="note-heading">
-		<h1><%= link_to @post.title, @post.url %></h1>
+		<div class="post-title"><%= @post.title %></div>
 
-		<%= link_to "(edit)", edit_board_post_path(@board, @post) %>
-		<%= link_to "(delete)", board_post_path(@board, @post), :method => :delete %>	
+		<%= link_to "(edit post)", edit_board_post_path(@board, @post) %>
+		<%= link_to "(delete post)", board_post_path(@board, @post), :method => :delete %>	
 
 		<%= link_to "(add note)", new_board_post_note_path(@board, @post) %>
 </div>

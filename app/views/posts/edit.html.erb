@@ -1,14 +1,23 @@
-<h1>Edit Post</h1>
+<div class="back-to-boards"><h1><%= link_to "<< Boards", boards_path %></h1></div>
+
+<div class="new-board-wrapper">
+	<div class="new-board-main">
+	<div>
+	<div class="new-board">Edit Post</div>
 
 <%= form_for [@board, @post] do |f| %>
 	<%= f.label :title %>
-	<%= f.text_field :title %>
+	<%= f.text_area :title %>
 
 	<%= f.label :image %>
-	<%= f.text_field :image %>
+	<%= f.text_area :image %>
 
 	<%= f.label :url %>
-	<%= f.text_field :url %>
+	<%= f.text_area :url %>
 
 	<%= f.submit %>
 <% end %>
+
+	</div>
+	</div>
+</div>

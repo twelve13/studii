@@ -1,8 +1,19 @@
-<h1>New Note</h1>
+<div class="back-to-boards"><h1><%= link_to "<< Boards", boards_path %></h1></div>
+
+<div class="new-board-wrapper">
+	<div class="new-board-main">
+	<div>
+	<div class="new-board">New Note</div>
 
 <%= form_for [@board, @post, @note] do |f| %>
 	<%= f.label :body %>
-	<%= f.text_field :body %>
+	<%= f.text_area :body %>
 
 	<%= f.submit %>
 <% end %>
+
+
+
+	</div>
+	</div>
+</div>
