@@ -9,7 +9,7 @@
 	<% @boards.each do |board| %>
 		<div class="board">
 			<img class="board-image" src="<%= board.image %>" alt="<%= board.title %>">
-			<%= link_to board.title, board %>
+			<div class="board-url"><%= link_to board.title, board %></div>
 		</div>
 	<% end %>
 </div>

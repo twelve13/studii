@@ -1,21 +1,31 @@
 * {
 	margin: 0;
+	font-family: 'Revalia', cursive;
+}
+
+a:link {
+	text-decoration: none;
+	color: white;
+}
+
+a:visited {
+	color: white;
 }
 
 .intro {
 	background-image: url("newdesk.png");
-	height: 50vh;
+	height: 60vh;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-color: #292b31;
-	display: flex;
+/*	display: flex;
 	align-items: flex-end;
-	justify-content: center;
+	justify-content: center;*/
 }
 
 .logo * {
-	width: 50%;
+	width: 30%;
 }
 
 .boards-wrapper, .posts-wrapper {
@@ -23,16 +33,35 @@
 	flex-wrap: wrap;
 }
 
+.boards-wrapper > .board:nth-of-type(n) {
+	background-color: #ff2e74;
+}
+
+.boards-wrapper > .board:nth-of-type(2n) {
+	background-color: #2eb2ff;
+}
 .board {
-	height: 200px;
+	height: 240px;
 	width: 20%;
+	background-color: #ff2e74;
 }
 
 .board-image {
-	height: 150px;
+	height: 80%;
 	width: 100%;
 }
 
+.board-url {
+	height: 20%;
+	background-color: black;
+	text-align: center;
+}
+
+
+.show-wrapper {
+	background-color: gray;
+}
+}
 .post {
 	height: 200px;
 	width: 20%;
