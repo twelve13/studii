@@ -1,3 +1,5 @@
+  	<header><h1><%= link_to "* Boards *", boards_path %></h1></header>
+
 <h2><%= @board.title %>
 <%= link_to "(edit)", edit_board_path(@board) %>
 <%= link_to "(delete)", board_path(@board), :method => :delete %>	

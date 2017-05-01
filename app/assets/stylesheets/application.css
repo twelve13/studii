@@ -1,3 +1,23 @@
+* {
+	margin: 0;
+}
+
+.intro {
+	background-image: url("newdesk.png");
+	height: 50vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #292b31;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.logo * {
+	width: 50%;
+}
+
 .boards-wrapper, .posts-wrapper {
 	display: flex;
 	flex-wrap: wrap;

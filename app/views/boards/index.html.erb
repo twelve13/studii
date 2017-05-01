@@ -1,4 +1,9 @@
-<div><%= link_to "(Add Board)", new_board_path %></div>
+
+<div class="intro">
+	<div class="logo"><%= image_tag "studii_logo2.png" %></div>
+</div>
+
+
 	
 <div class="boards-wrapper">
 	<% @boards.each do |board| %>
@@ -9,3 +14,5 @@
 	<% end %>
 </div>
 	
+
+	<div><%= link_to "(Add Board)", new_board_path %></div>
