@@ -2,11 +2,15 @@
   	<div class="back-to-boards"><h1><%= link_to "<< Boards", boards_path %></h1></div>
 	<div class="page-header">
 		<div class="board-title"><%= @board.title %></h1></div>
+
 			<h3>
-				<%= link_to "(edit board)", edit_board_path(@board) %>
-				<%= link_to "(delete board)", board_path(@board), :method => :delete %>	
-				<div><%= link_to "(add post)", new_board_post_path(@board) %></div>
+				<% if @board.user == current_user %>
+					<%= link_to "(edit board)", edit_board_path(@board) %>
+					<%= link_to "(delete board)", board_path(@board), :method => :delete %>	
+					<div><%= link_to "(add post)", new_board_post_path(@board) %></div>
+				<% end %>
 			</h3>
+		
 	</div>
 
 

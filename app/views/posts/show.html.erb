@@ -11,8 +11,11 @@
 	<div class="url-and-notes">
 		<div class="note-heading">
 			<div class="post-title"><%= @post.title %></div>
+
+			<%# if @post.user == current_user %>	
 			<%= link_to "(edit post)", edit_board_post_path(@board, @post) %>
 			<%= link_to "(delete post)", board_post_path(@board, @post), :method => :delete %>	
+			<%# end %>
 			<div><%= link_to "(add note)", new_board_post_note_path(@board, @post) %></div>
 		</div>
 		<% @post.notes.each do |note| %>

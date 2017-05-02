@@ -23,7 +23,11 @@ end
 
 def update
 	@board = Board.find(params[:id])
-	@board.update(board_params)
+	if @board.user == current_user
+		@board.update(board_params)
+	else
+		flash[:alert] = "Don't go changing other people's stuff."
+	end
 	redirect_to board_path(@board)
 end
 
@@ -32,7 +36,7 @@ def destroy
 	if @board.user == current_user
 		@board.destroy
 	else
-		flash[:alert] = "Don't destroy other people's boards."
+		flash[:alert] = "Don't destroy other people's stuff."
 	end
 	redirect_to boards_path
 end

@@ -80,10 +80,16 @@ a:visited {
 	align-items: center;
 	background-color: black;
 	display: flex;
-	height: 20%;
+	height: 21%;
 	justify-content: center;
 	position: relative;
-	bottom: 1%;
+	bottom: 2%;
+}
+
+.community {
+	color: white;
+	font-size: 24px;
+	margin-top: 10%;
 }
 
 .new-board-wrapper {

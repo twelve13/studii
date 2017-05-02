@@ -7,7 +7,11 @@ end
 
 def new
 	@board = Board.find(params[:board_id])
-	@post = Post.new
+	if @board.user == current_user
+		@post = Post.new
+	else
+	flash[:alert] = "nope"
+	end
 end
 
 def create
@@ -24,14 +28,22 @@ end
 def update
 	@board = Board.find(params[:board_id])
 	@post = @board.posts.find(params[:id])
-	@post.update(post_params)
+		if @board.user == current_user
+			@post.update(post_params)
+		else
+			flash[:alert] = "Don't go changing other people's stuff."
+		end
 	redirect_to board_post_path(@board, @post)
 end
 
 def destroy
 	@board = Board.find(params[:board_id])
 	@post = @board.posts.find(params[:id])
-	@post.destroy
+	if @board.user == current_user
+		@post.destroy
+	else
+		flash[:alert] = "Don't destroy other people's stuff."
+	end
 	redirect_to board_path(@board)
 end
 
