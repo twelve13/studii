@@ -13,7 +13,7 @@ def new
 end
 
 def create
-	@board = Board.create(board_params)
+	@board = current_user.boards.create(board_params)
 	redirect_to root_path
 end
 
@@ -29,7 +29,11 @@ end
 
 def destroy
 	@board = Board.find(params[:id])
-	@board.destroy
+	if @board.user == current_user
+		@board.destroy
+	else
+		flash[:alert] = "Don't destroy other people's boards."
+	end
 	redirect_to boards_path
 end
 
