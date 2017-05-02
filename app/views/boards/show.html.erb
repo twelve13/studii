@@ -1,24 +1,22 @@
   <div class="show-wrapper">
-
   	<div class="back-to-boards"><h1><%= link_to "<< Boards", boards_path %></h1></div>
-<div class="page-header">
-<div class="board-title"><%= @board.title %></h1></div>
-<h3>
-<%= link_to "(edit board)", edit_board_path(@board) %>
-<%= link_to "(delete board)", board_path(@board), :method => :delete %>	
-<div><%= link_to "(add post)", new_board_post_path(@board) %></div>
-</h3>
-</div>
+	<div class="page-header">
+		<div class="board-title"><%= @board.title %></h1></div>
+			<h3>
+				<%= link_to "(edit board)", edit_board_path(@board) %>
+				<%= link_to "(delete board)", board_path(@board), :method => :delete %>	
+				<div><%= link_to "(add post)", new_board_post_path(@board) %></div>
+			</h3>
+	</div>
 
 
-<div class="posts-wrapper">
-	<% @board.posts.each do |post| %>
-		<div class="post">
-			<div class="post-image-wrapper"><img class="post-image" src="<%= post.image %>" alt="* * <%= post.title %> * *"></div>
-			<div><%= link_to post.title, board_post_path(@board, post) %></div>
-		</div>
-	<% end %>
-</div>
-
+	<div class="posts-wrapper">
+		<% @board.posts.each do |post| %>
+			<div class="post">
+				<div class="post-image-wrapper"><img class="post-image" src="<%= post.image %>" alt="* * <%= post.title %> * *"></div>
+				<div><%= link_to post.title, board_post_path(@board, post) %></div>
+			</div>
+		<% end %>
+	</div>
 </div>
 

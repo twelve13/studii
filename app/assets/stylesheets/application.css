@@ -17,15 +17,20 @@ a:visited {
 }
 
 .intro {
-	background-image: url("newdesk2b.jpg");
-	height: 60vh;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-color: #292b31;
-	display: flex;
-	justify-content: space-around;
 	align-content: space-around;
+	background-color: #292b31;
+	background-image: url("desk.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	height: 60vh;
+	justify-content: space-around;
+}
+
+.logo * {
+	margin: 2% 0 0 2%;
+	width: 30%;
 }
 
 .add-board {
@@ -33,9 +38,8 @@ a:visited {
 	margin: 0 2% 2% 0;
 }
 
-.logo * {
-	width: 30%;
-	margin: 2% 0 0 2%;
+.boards-wrapper {
+	border-top: 15px solid white;
 }
 
 .boards-wrapper, .posts-wrapper {
@@ -55,28 +59,33 @@ a:visited {
 	background-color: #ffdc2e;
 }
 
-.boards-wrapper {
-	border-top: 15px solid white;
-}
 .board {
+	background-color: #ff2e74;
 	height: 240px;
 	width: 25%;
-	background-color: #ff2e74;
 }
 
 .board-image {
 	height: 80%;
-	width: 100%;
 	text-align: center;
+	width: 100%;
+}
+
+.board-title {
+	color: white;
+	font-size: 36px;
 }
 
 .board-url {
-	height: 20%;
+	align-items: center;
 	background-color: black;
 	display: flex;
+	height: 20%;
 	justify-content: center;
-	align-items: center;
+	position: relative;
+	bottom: 1%;
 }
+
 .new-board-wrapper {
 	display: flex;
 	justify-content: center;
@@ -98,39 +107,28 @@ a:visited {
 	font-size: 30px;
 }
 
-.board-title {
-	color: white;
-	font-size: 36px;
-}
-
-.show-wrapper {
-
-}
-.back-to-boards {
-	margin-bottom: 3%;
-}
-
 .page-header {
 	text-align: center;
 	margin-bottom: 2%;
 }
 
 .post {
-	height: 250px;
-	width: 31%;
-	margin: 1%;
 	background-color: black;
 	border-radius: 10%;
 	display: flex;
 	flex-wrap: wrap;
+	height: 250px;
 	justify-content: center;
+	margin: 1%;
+	width: 31%;
 }
+
 .post-image-wrapper {
+	align-items: center;
+	color: white;
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	width: 100%;
-	color: white;
+	width: 100%;	
 }
 
 .post-image {
@@ -138,13 +136,18 @@ a:visited {
 	width: 70%;
 }
 
+.post-title {
+	color: white;
+	font-size: 36px;
+}
+
 .notes-header {
 	margin-bottom: 5%;
 }
 
 .inner-post-image-wrapper {
-	width: 35%;
 	height: 300px;
+	width: 35%;
 }
 
 .inner-post-image {
@@ -153,9 +156,9 @@ a:visited {
 }
 
 .inner-post-wrapper {
+	align-items: center;
 	display: flex;	
 	justify-content: center;
-	align-items: center;
 }
 
 .url-and-notes {
@@ -174,20 +177,19 @@ a:visited {
 
 .note-body {
 	background-color: white;
-	height: 100px;
 	box-sizing: border-box;
-	padding: 2%;
+	height: 100px;
 	overflow-wrap: break-word;
+	padding: 2%;	
+}
+
+.back-to-boards {
+	margin-bottom: 3%;
 }
 
 .back-to {
 	color: white;
 	margin-left: 2%;
-}
-
-.post-title {
-	font-size: 36px;
-	color: white;
 }
 
 .visit {

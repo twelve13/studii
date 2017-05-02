@@ -3,18 +3,17 @@
 
 <div class="new-board-wrapper">
 	<div class="new-board-main">
-	<div>
-	<div class="new-board">Edit Board</div>
+		<div>
+			<div class="new-board">Edit Board</div>
+				<%= form_for @board do |f| %>
+				<%= f.label :title %>
+				<%= f.text_area :title %>
 
-	<%= form_for @board do |f| %>
-	<%= f.label :title %>
-	<%= f.text_area :title %>
+				<%= f.label :image %>
+				<%= f.text_area :image %>
 
-	<%= f.label :image %>
-	<%= f.text_area :image %>
-
-	<%= f.submit %>
-	<% end %>
-	</div>
+				<%= f.submit %>
+				<% end %>
+		</div>
 	</div>
 </div>

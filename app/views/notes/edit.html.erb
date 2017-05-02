@@ -3,18 +3,14 @@
 
 <div class="new-board-wrapper">
 	<div class="new-board-main">
-	<div>
-	<div class="new-board">Edit Note</div>
-			<%= form_for [@board, @post, @note] do |f| %>
-			<%= f.label :body %>
-			<%= f.text_area :body %>
+		<div>
+			<div class="new-board">Edit Note</div>
+				<%= form_for [@board, @post, @note] do |f| %>
+				<%= f.label :body %>
+				<%= f.text_area :body %>
 
-			<%= f.submit %>			
-			<% end %>
-
-
-
-
-	</div>
+				<%= f.submit %>			
+				<% end %>
+		</div>
 	</div>
 </div>

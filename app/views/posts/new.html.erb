@@ -3,23 +3,20 @@
 
 <div class="new-board-wrapper">
 	<div class="new-board-main">
-	<div>
-	<div class="new-board">New Post</div>
+		<div>
+			<div class="new-board">New Post</div>
+				<%= form_for [@board, @post] do |f| %>
+				<%= f.label :title %>
+				<%= f.text_area :title %>
 
-	<%= form_for [@board, @post] do |f| %>
-	<%= f.label :title %>
-	<%= f.text_area :title %>
+				<%= f.label :image %>
+				<%= f.text_area :image %>
 
-	<%= f.label :image %>
-	<%= f.text_area :image %>
+				<%= f.label :url %>
+				<%= f.text_area :url %>
 
-	<%= f.label :url %>
-	<%= f.text_area :url %>
-
-	<%= f.submit %>
-	<% end %>
-
-
-	</div>
+				<%= f.submit %>
+				<% end %>
+		</div>
 	</div>
 </div>
