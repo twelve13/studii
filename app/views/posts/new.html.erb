@@ -4,7 +4,7 @@
 <div class="new-board-wrapper">
 	<div class="new-board-main">
 		<div>
-			<div class="new-board">New Post</div>
+			<div class="new-board">New Post (Title and URL are required)</div>
 				<%= form_for [@board, @post] do |f| %>
 				<%= f.label :title %>
 				<%= f.text_area :title %>

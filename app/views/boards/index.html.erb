@@ -18,13 +18,15 @@
 </div>
 
 <div class="community">Created By The Community</div>
-<div class="boards-wrapper">
+<div class="boards-wrapper community-wrapper">
 	<% @boards.each do |board| %>
 	<% if board.user != current_user %>
-		<div class="board">
-			<img class="board-image" src="<%= board.image %>" alt="* * <%= board.title %> * *">
-			<div class="board-url"><%= link_to board.title, board %></div>
-		</div>
+		<% if board.title != "Private" %>
+			<div class="board">
+				<img class="board-image" src="<%= board.image %>" alt="* * <%= board.title %> * *">
+				<div class="board-url"><%= link_to board.title, board %></div>
+			</div>
+		<% end %>
 	<% end %>
 	<% end %>
 	

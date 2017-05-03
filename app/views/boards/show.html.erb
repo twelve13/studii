@@ -1,6 +1,7 @@
   <div class="show-wrapper">
   	<div class="back-to-boards"><h1><%= link_to "<< Boards", boards_path %></h1></div>
 	<div class="page-header">
+		<img class="board-top" src="<%= @board.image %>">
 		<div class="board-title"><%= @board.title %></h1></div>
 
 			<h3>
@@ -16,11 +17,23 @@
 
 	<div class="posts-wrapper">
 		<% @board.posts.each do |post| %>
-			<div class="post">
-				<div class="post-image-wrapper"><img class="post-image" src="<%= post.image %>" alt="* * <%= post.title %> * *"></div>
-				<div><%= link_to post.title, board_post_path(@board, post) %></div>
-			</div>
+			<% if @board.user == current_user %>
+				<div class="post">
+					<div class="post-image-wrapper"><img class="post-image" src="<%= post.image %>" alt="* * <%= post.title %> * *"></div>
+					<div><%= link_to post.title, board_post_path(@board, post) %></div>
+				</div>
+			<% elsif @board.user != current_user %>
+				<% if post.title != "Private" %>
+					<div class="post">
+						<div class="post-image-wrapper"><img class="post-image" src="<%= post.image %>" alt="* * <%= post.title %> * *"></div>
+						<div><%= link_to post.title, board_post_path(@board, post) %></div>
+					</div>
+
+				<% end %>
+			<% end %>
 		<% end %>
 	</div>
 </div>
+
+
 

@@ -3,7 +3,10 @@
 <div class="new-board-wrapper">
 	<div class="new-board-main">
 		<div>
-			<div class="new-board">New Board</div>
+			<div class="new-board">
+				<div>New Board</div> 
+				<div>Title is required.  To create a private board, make the title "Private".</div>
+			</div>
 				<%= form_for @board do |f| %>
 				<%= f.label :title %>
 				<%= f.text_area :title %>
