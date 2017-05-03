@@ -109,11 +109,15 @@ a:visited {
 }
 
 .new-board {
-	height: 10vh;
+	height: 20vh;
 }
 
 .new-board :first-child {
 	font-size: 30px;
+}
+
+.new-board :nth-child(2) {
+	margin-bottom: 5%;
 }
 
 .page-header {
@@ -196,6 +200,12 @@ a:visited {
 	padding: 2%;	
 }
 
+.window-footer {
+	box-sizing: border-box;
+	padding: 0 2%;
+	font-size: 12px;
+}
+
 .back-to-boards {
 	margin-bottom: 3%;
 }
@@ -220,10 +230,8 @@ a:visited {
 }
 
 .new_user, .new_user ~ *{
-	
 	margin-left: 10%;
 	width: 30%;
-	
 }
 
 .new_user {

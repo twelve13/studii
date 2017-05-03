@@ -4,7 +4,9 @@
 <div class="new-board-wrapper">
 	<div class="new-board-main">
 		<div>
-			<div class="new-board">New Post (Title and URL are required)</div>
+			<div class="new-board">
+				<div>New Post</div>
+				<div>Title and URL are required.  To create a private post, make the title "Private".</div>
 				<%= form_for [@board, @post] do |f| %>
 				<%= f.label :title %>
 				<%= f.text_area :title %>
@@ -20,3 +22,5 @@
 		</div>
 	</div>
 </div>
+
+	

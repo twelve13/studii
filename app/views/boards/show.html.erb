@@ -3,6 +3,9 @@
 	<div class="page-header">
 		<img class="board-top" src="<%= @board.image %>">
 		<div class="board-title"><%= @board.title %></h1></div>
+		<div class="window-footer">
+			<div><%= @board.user.email %></div>
+		</div>
 
 			<h3>
 				<% if @board.user == current_user %>
