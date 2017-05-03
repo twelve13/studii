@@ -9,14 +9,18 @@ This app was built using Ruby on Rails, and includes some HTML and CSS.
 
 > Approach Taken:
 
-I drew inspiration from my Chrome Bookmarks list, Pinterest, and Slack to determine features I'd want my application to have.  I mapped my ERD illustrating the many-to-many relationship between "boards" and "posts" (with "listings" joining the two) and a one-to-many relationship between "posts" and "notes".
+I drew inspiration from my Chrome Bookmarks list, Pinterest, and Slack to determine features I'd want my application to have.  I mapped my ERD illustrating the many-to-many relationship between "boards" and "posts" (with "listings" joining the two) and a one-to-many relationship between "posts" and "notes".  After I completed full CRUD functions, I added Devise and tinkered with user authentication/rights.
 
-Features:
+> Features:
+
+Users can view, create, edit, and delete Boards, which correspond to categories of Posts.  On each Board, users can view, create, edit, and delete Posts.  On each Post page, users can access a link to go to that post's url, and view, create, edit, and delete Notes for the post.  Users can create private Boards or Posts.  Users can view other users' Boards, Posts, and Notes, but they can not create, edit, or delete them (they can add notes.)
 
 
-Installation Instructions:
+> Installation Instructions:
 
-None.
+None, the app is hosted online.
 
-Unsolved Problems:
+> Unsolved Problems:
+
+Error handling when user enters invalid url address.
 
