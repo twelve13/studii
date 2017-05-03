@@ -1,24 +1,22 @@
-# README
+~ * Studii * ~
+An app for collecting and organizing bookmarks for all the resources one might need for studying web development.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+> Technologies Used:
 
-* Ruby version
+This app was built using Ruby on Rails, and includes some HTML and CSS.
 
-* System dependencies
 
-* Configuration
+> Approach Taken:
 
-* Database creation
+I drew inspiration from my Chrome Bookmarks list, Pinterest, and Slack to determine features I'd want my application to have.  I mapped my ERD illustrating the many-to-many relationship between "boards" and "posts" (with "listings" joining the two) and a one-to-many relationship between "posts" and "notes".
 
-* Database initialization
+Features:
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+Installation Instructions:
 
-* Deployment instructions
+None.
 
-* ...
+Unsolved Problems:
+
