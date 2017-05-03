@@ -3,7 +3,7 @@ Board.destroy_all
 Post.destroy_all
 Note.destroy_all
 
-caroline = User.create!(email: "caroline@gmail.com", password: "password")
+caroline = User.create!(email: "carolinecaroline@gmail.com", password: "password")
 
 
 base = Board.create(title: "Home Base", image: "http://www.homebasefix.com/images/1.png", user: caroline)
