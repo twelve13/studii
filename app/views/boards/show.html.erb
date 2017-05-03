@@ -1,7 +1,7 @@
   <div class="show-wrapper">
   	<div class="back-to-boards"><h1><%= link_to "<< Boards", boards_path %></h1></div>
 	<div class="page-header">
-		<img class="board-top" src="<%= @board.image %>" alt="<%= board.title">
+		<img class="board-top" src="<%= @board.image %>" alt="<%= board.title %>">
 		<div class="board-title"><%= @board.title %></div>
 		<div class="window-footer">
 			<div><%= @board.user.email %></div>
