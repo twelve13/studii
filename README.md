@@ -1,4 +1,5 @@
 ~ * Studii * ~
+*by Caroline Chen*
 An app for collecting and organizing bookmarks for all the resources one might need for studying web development.
 
 
@@ -19,8 +20,8 @@ Users can view, create, edit, and delete Boards, which correspond to categories 
 > Installation Instructions:
 
 None, the app is hosted online.
+<!-- This is referring to how someone would clone it down to work on it locally -->
 
 > Unsolved Problems:
 
 Error handling when user enters invalid url address.
-
