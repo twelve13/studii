@@ -4,8 +4,14 @@
 	<div class="new-board-main">
 		<div>
 			<div class="new-board">
-				<div>New Board</div> 
+				<div>New Board</div>
 				<div>Title is required.  To create a private board, make the title "Private".</div>
+				<%# Not sure if you need to remind them title is required unless the validation fails
+				after an initial attempt, in which case: %>
+				<% @board.errors.full_messages.each do |message| %>
+			    <p><%= message %></p>
+			  <% end %>
+				<%# The same would apply for other models %>
 			</div>
 				<%= form_for @board do |f| %>
 				<%= f.label :title %>

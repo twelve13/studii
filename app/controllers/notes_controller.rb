@@ -36,6 +36,9 @@ def destroy
 end
 
 private
+
+# Not sure, but I don't think the post_params method is being used in this controller.
+# If not, remove it.
 def post_params
 	params.require(:post).permit(:title, :image, :url, :board_id)
 end

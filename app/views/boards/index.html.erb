@@ -13,6 +13,11 @@
 			<img class="board-image" src="<%= board.image %>" alt="* * <%= board.title %> * *">
 			<div class="board-url"><%= link_to board.title, board %></div>
 		</div>
+		<%# If you wanted to make the whole div a link, you could use %>
+		<%= link_to board_path(board), class: 'board' do %>
+			<img class="board-image" src="<%= board.image %>" alt="* * <%= board.title %> * *">
+			<div class="board-url"><%= link_to board.title, board %></div>
+		<% end %>
 	<% end %>
 	<% end %>
 </div>
@@ -29,5 +34,5 @@
 		<% end %>
 	<% end %>
 	<% end %>
-	
+
 </div>
