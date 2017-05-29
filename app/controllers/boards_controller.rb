@@ -17,7 +17,12 @@ end
 def create
 
 	@board = current_user.boards.create(board_params)
-	redirect_to root_path
+	if @board.save
+		redirect_to root_path
+	else
+		flash[:alert] = "Fields Missing"
+		render :new
+	end
 end
 
 def edit

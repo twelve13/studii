@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 before_filter :authenticate_user!,
 	:only => [:new, :create, :edit, :update, :destroy]
-	
+
 def show
 	@board = Board.find(params[:board_id])
 	@post = @board.posts.find(params[:id])
@@ -19,7 +19,12 @@ end
 def create
 	@board = Board.find(params[:board_id])
 	@post = @board.posts.create(post_params)
-	redirect_to board_post_path(@board, @post)
+	if @post.save
+		redirect_to board_post_path(@board, @post)
+	else
+		flash[:alert] = "Fields Missing"
+		render :new
+	end
 end
 
 def edit
