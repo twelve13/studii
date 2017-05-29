@@ -1,4 +1,6 @@
 class BoardsController < ApplicationController
+before_filter :authenticate_user!,
+	:only => [:new, :create, :edit, :update, :destroy]
 
 def index
 	@boards = Board.all
@@ -13,6 +15,7 @@ def new
 end
 
 def create
+
 	@board = current_user.boards.create(board_params)
 	redirect_to root_path
 end

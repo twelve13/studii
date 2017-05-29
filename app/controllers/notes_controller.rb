@@ -23,7 +23,11 @@ def update
 	@board = Board.find(params[:board_id])
 	@post = @board.posts.find(params[:post_id])
 	@note = @post.notes.find(params[:id])
-	@note.update(note_params)
+	if @board.user == current_user
+		@note.update(note_params)
+	else
+		flash[:alert] = "Only the owner of this board can edit notes."
+	end
 	redirect_to board_post_path(@board, @post)
 end
 
@@ -31,7 +35,11 @@ def destroy
 	@board = Board.find(params[:board_id])
 	@post = @board.posts.find(params[:post_id])
 	@note = @post.notes.find(params[:id])
-	@note.destroy
+	if @board.user == current_user
+		@note.destroy
+	else
+		flash[:alert] = "Only the owner of this board can delete notes."
+	end
 	redirect_to board_post_path(@board, @post)
 end
 

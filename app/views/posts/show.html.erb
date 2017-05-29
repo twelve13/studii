@@ -11,9 +11,6 @@
 	<div class="url-and-notes">
 		<div class="note-heading">
 			<div class="post-title"><%= @post.title %></div>
-			<div class="window-footer">
-					<div><%= @board.user.email %></div>
-			</div>
 			<% if @board.user == current_user %>	
 			<%= link_to "(edit post)", edit_board_post_path(@board, @post) %>
 			<%= link_to "(delete post)", board_post_path(@board, @post), :method => :delete %>	
@@ -24,7 +21,6 @@
 			<div class="note">	
 				<div class="note-body"><%= note.body %></div> 
 				<div class="window-footer">
-					<div><%= @board.user.email %></div>
 					<div><%= note.created_at %></div>
 				</div>
 				<%= link_to "(edit note)", edit_board_post_note_path(@board, @post, note) %>

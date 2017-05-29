@@ -3,10 +3,6 @@
 	<div class="page-header">
 		<img class="board-top" src="<%= @board.image %>" alt="<%= @board.title %>">
 		<div class="board-title"><%= @board.title %></div>
-		<div class="window-footer">
-			<div><%= @board.user.email %></div>
-		</div>
-
 			<div class="edit-links">
 				<% if @board.user == current_user %>
 					<%= link_to "(edit board)", edit_board_path(@board) %>
