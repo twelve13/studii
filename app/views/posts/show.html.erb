@@ -6,7 +6,7 @@
 <div class="inner-post-wrapper">
 	<div class="inner-post-image-wrapper">
 		<img class="inner-post-image" src="<%= @post.image %>" alt="* * <%= @post.title %> * *">
-			<div class="visit"><%= link_to "Visit Page >>", @post.url %></div>
+			<div class="visit"><%= link_to "Visit Page >>", @post.url, target: :_blank %></div>
 	</div>
 	<div class="url-and-notes">
 		<div class="note-heading">
