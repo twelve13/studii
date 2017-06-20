@@ -9,10 +9,12 @@
 <div class="boards-wrapper">
 	<% @boards.each do |board| %>
 	<% if board.user == current_user %>
-		<div class="board">
+		<%= link_to board_path(board), class: "board" do %>
+		<div>
 			<img class="board-image" src="<%= board.image %>" alt="* * <%= board.title %> * *">
-			<div class="board-url"><%= link_to board.title, board %></div>
+			<p class="board-url"><%= board.title %><p>
 		</div>
+		<% end %>
 	<% end %>
 	<% end %>
 </div>
