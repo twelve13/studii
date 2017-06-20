@@ -1,10 +1,12 @@
-~ * Studii * ~
+>Studii
+>created by Caroline Chen
+
 An app for collecting and organizing bookmarks for all the resources one might need for studying web development.
 
 
 > Technologies Used:
 
-This app was built using Ruby on Rails, and includes some HTML and CSS.
+This app was built using Ruby on Rails.
 
 
 > Approach Taken:
@@ -18,9 +20,9 @@ Users can view, create, edit, and delete Boards, which correspond to categories 
 
 > Installation Instructions:
 
-None, the app is hosted online.
+Requires Rails.  After cloning down repo, run $ bundle install, then $ rails db:drop db:create db:migrate db:seed.
 
-> Unsolved Problems:
+> Next Steps:
 
-Error handling when user enters invalid url address.
+Enable editing of the Board that a Post belongs to.  Allow users to copy other users's Boards/Posts to own account.
 
